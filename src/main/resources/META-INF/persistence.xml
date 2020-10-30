@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd" version="1.0">
+
+	<persistence-unit name="testDB" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+		<properties>
+			<!--This is for local m2 in memory database-->
+<!-- 			<property name="hibernate.connection.driver_class" value="org.hsqldb.jdbcDriver"/>-->
+<!--        	<property name="hibernate.connection.url" value="jdbc:hsqldb:mem:testDB"/>-->
+<!--			<property name="hibernate.show_sql" value="true" />-->
+<!--			<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" />-->
+<!--			<property name="hibernate.hbm2ddl.auto" value="update" />-->
+
+			<!--This is for local mysql database -->
+			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+			<property name="hibernate.connection.url" value="jdbc:mysql://:3306/testDb" />
+			<property name="hibernate.connection.username" value="root" />
+			<property name="hibernate.connection.password" value="root" />
+			<property name="hibernate.connection.pool_size" value="10" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+			<property name="hibernate.id.new_generator_mappings" value="true" />
+			<property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+			<property name="hibernate.show_sql" value="true"/>
+			
+		</properties>
+	</persistence-unit>
+</persistence>
